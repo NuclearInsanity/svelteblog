@@ -24,6 +24,7 @@ export const GET = async ({ url }) => {
 	return new Response(feed.xml({ indent: true }), {
 		headers: {
 			'Content-Type': 'application/xml',
+			'Cache-Control': `max-age=0, s-maxage=${60*60}`
 		},
 	})
 }
